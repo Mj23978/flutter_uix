@@ -3,6 +3,8 @@ name: Publish plugin
 on:
   release:
     types: [published]
+  push:
+    branches: [ main, master ]
 
 jobs:
   publish:
