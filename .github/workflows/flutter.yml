@@ -1,4 +1,4 @@
-name: test Package
+name: analyze Package
 
 on:
   release:
@@ -7,7 +7,7 @@ on:
     branches: [ main, master ]
 
 jobs:
-  publish:
+  flutter-analyze:
 
     runs-on: ubuntu-latest
 
@@ -21,3 +21,31 @@ jobs:
         flutter-version: '2.0.5'
     - run: flutter pub get
     - run: flutter analyze .
+
+  pana-analyze:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: axel-op/dart-package-analyzer@v3
+        # set an id for the current step
+        id: analysis
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      # You can then use this id to retrieve the outputs in the next steps.
+      # The following step shows how to exit the workflow with an error if the total score in percentage is below 50:
+      - name: Check scores
+        env:
+          # NB: "analysis" is the id set above. Replace it with the one you used if different.
+          TOTAL: ${{ steps.analysis.outputs.total }}
+          TOTAL_MAX: ${{ steps.analysis.outputs.total_max }}
+        run: |
+          PERCENTAGE=$(( $TOTAL * 100 / $TOTAL_MAX ))
+          if (( $PERCENTAGE < 50 ))
+          then
+            echo Score too low!
+            exit 1
+          fi
