@@ -1,4 +1,4 @@
-name: Publish plugin
+name: test Package
 
 on:
   release:
@@ -21,3 +21,4 @@ jobs:
         flutter-version: '2.0.5'
     - run: flutter pub get
     - run: flutter test
+    - run: flutter analyze .
