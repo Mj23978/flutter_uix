@@ -13,7 +13,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_uix/flutter_x.dart';
+import 'package:flutter_uix/flutter_uix.dart';
 
 import 'builder.dart';
 import 'flutterx_mixins/color_mixin.dart';

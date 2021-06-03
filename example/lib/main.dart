@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_uix/flutter_x.dart';
+import 'package:flutter_uix/flutter_uix.dart';
 
 void main() => runApp(MaterialApp(
       home: Demo(),
