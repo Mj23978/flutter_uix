@@ -224,7 +224,6 @@ class FxZeroList extends StatelessWidget {
   }
 }
 
-// TODO: CardProfile flutterZero
 
 class PKCardProfileSkeleton extends StatefulWidget {
   const PKCardProfileSkeleton(
@@ -373,8 +372,6 @@ class _PKCardProfileSkeletonState extends State<PKCardProfileSkeleton>
     );
   }
 }
-
-// TODO: CardPage flutterZero
 
 class PKCardPageSkeleton extends StatefulWidget {
   const PKCardPageSkeleton({this.totalLines = 5});
