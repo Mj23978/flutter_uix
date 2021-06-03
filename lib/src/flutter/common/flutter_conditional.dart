@@ -63,9 +63,7 @@ class FxConditional extends StatelessWidget {
     required this.condition,
     required this.builder,
     this.fallback,
-  })  : assert(condition != null),
-        assert(builder != null),
-        super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => condition

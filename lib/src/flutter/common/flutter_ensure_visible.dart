@@ -32,9 +32,7 @@ class FxEnsureVisibleWhenFocused extends StatefulWidget {
     required this.focusNode,
     this.curve = Curves.ease,
     this.duration = const Duration(milliseconds: 100),
-  })  : assert(child != null),
-        assert(focusNode != null),
-        super(key: key);
+  })  : super(key: key);
 
   /// The node we will monitor to determine if the child is focused
   final FocusNode focusNode;
@@ -131,7 +129,6 @@ class _FxEnsureVisibleWhenFocusedState extends State<FxEnsureVisibleWhenFocused>
 
     // Get the Scrollable state (in order to retrieve its offset)
     final ScrollableState scrollableState = Scrollable.of(context)!;
-    assert(scrollableState != null);
 
     // Get its offset
     final ScrollPosition position = scrollableState.position;

@@ -114,7 +114,7 @@ extension SizedBoxExtension on Widget {
 
 extension SizedBoxListExtension on List<num> {
   Widget sbwh({Key? key, Widget? child}) {
-    assert(this.length == 2, "Your List Must Have Exactly 2 Members");
+    assert(length == 2, "Your List Must Have Exactly 2 Members");
     return SizedBox(
       width: this[0].toDouble(),
       height: this[1].toDouble(),

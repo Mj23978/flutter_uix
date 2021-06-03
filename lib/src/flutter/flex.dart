@@ -49,8 +49,7 @@ class FxColumn extends StatelessWidget {
       this.alignment = MainAxisAlignment.start,
       this.crossAlignment = CrossAxisAlignment.start,
       this.axisSize = MainAxisSize.min})
-      : assert(children != null),
-        super(key: key);
+      : super(key: key);
   final List<Widget> children;
 
   final MainAxisAlignment? alignment;
@@ -76,8 +75,7 @@ class FxRow extends StatelessWidget {
     this.alignment,
     this.crossAlignment,
     this.axisSize,
-  })  : assert(children != null),
-        super(key: key);
+  })  : super(key: key);
   final List<Widget> children;
   final MainAxisAlignment? alignment;
   final CrossAxisAlignment? crossAlignment;
@@ -99,14 +97,12 @@ class FxStack extends StatelessWidget {
       {Key? key,
       this.alignment = AlignmentDirectional.topStart,
       this.fit = StackFit.loose,
-      this.overflow = Overflow.clip})
-      : assert(children != null),
-        super(key: key);
+      })
+      : super(key: key);
 
   final List<Widget> children;
   final AlignmentGeometry? alignment;
   final StackFit? fit;
-  final Overflow? overflow;
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +111,6 @@ class FxStack extends StatelessWidget {
       children: children,
       alignment: alignment ?? AlignmentDirectional.topStart,
       fit: fit ?? StackFit.loose,
-      overflow: overflow ?? Overflow.clip,
     );
   }
 }

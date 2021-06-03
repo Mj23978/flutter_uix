@@ -12,6 +12,8 @@
  */
 
 import 'package:flutter/material.dart';
+import '../../../flutter_uix.dart';
+import '../builder.dart';
 import '../flutterx_mixins/alignment_mixin.dart';
 import '../flutterx_mixins/color_mixin.dart';
 import '../flutterx_mixins/curves_mixin.dart';
@@ -19,9 +21,7 @@ import '../flutterx_mixins/duration_mixin.dart';
 import '../flutterx_mixins/neu_mixin.dart';
 import '../flutterx_mixins/padding_mixin.dart';
 import '../flutterx_mixins/round_mixin.dart';
-import '../../../flutter_uix.dart';
 
-import '../builder.dart';
 
 class FxAnimatedBox extends FxWidgetBuilder<Widget>
     with
@@ -48,7 +48,7 @@ class FxAnimatedBox extends FxWidgetBuilder<Widget>
   double? _width;
   EdgeInsetsGeometry? _margin;
   DecorationImage? _bgImage;
-  bool _isCircleRounded = false;
+  final bool _isCircleRounded = false;
   List<BoxShadow>? _boxShadow;
   FxNeumorph? _flutterNeumorph;
   Matrix4? _transform;
@@ -93,7 +93,6 @@ class FxAnimatedBox extends FxWidgetBuilder<Widget>
   // transforming
   FxAnimatedBox transform(Matrix4 val) => this.._transform = val;
 
-  FxAnimatedBox get roundedFull => this.._isCircleRounded = true;
 
   /// Shadowing
   FxAnimatedBox get shadow {
@@ -254,7 +253,7 @@ class FxAnimatedBox extends FxWidgetBuilder<Widget>
         transform: _transform,
         decoration: _flutterNeumorph != null
             ? BoxDecoration(
-                borderRadius: _isCircleRounded || roundedValue.isNull
+                borderRadius: _isCircleRounded
                     ? null
                     : BorderRadius.circular(roundedValue),
                 shape: _isCircleRounded ? BoxShape.circle : BoxShape.rectangle,
@@ -265,7 +264,7 @@ class FxAnimatedBox extends FxWidgetBuilder<Widget>
               )
             : BoxDecoration(
                 color: flutterColor,
-                borderRadius: _isCircleRounded || roundedValue.isNull
+                borderRadius: _isCircleRounded
                     ? null
                     : BorderRadius.circular(roundedValue),
                 shape: _isCircleRounded ? BoxShape.circle : BoxShape.rectangle,

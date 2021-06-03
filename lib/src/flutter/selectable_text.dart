@@ -20,14 +20,8 @@ import 'flutterx_mixins/color_mixin.dart';
 @protected
 class FxSelectableTextBuilder extends FxWidgetBuilder<SelectableText>
     with FxColorMixin<FxSelectableTextBuilder> {
-  FxSelectableTextBuilder(this._text) : assert(_text != null) {
-    setChildToColor(this);
-  }
-
-  FxSelectableTextBuilder.existing(this._text, this._textStyle)
-      : assert(_text != null) {
-    setChildToColor(this);
-  }
+  FxSelectableTextBuilder(this._text);
+  FxSelectableTextBuilder.existing(this._text, this._textStyle);
 
   String _text;
   String? _fontFamily;

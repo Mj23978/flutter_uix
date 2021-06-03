@@ -25,25 +25,21 @@ mixin FxDurationMixing<T> {
   }
 
   T? secs({required int sec}) {
-    assert(sec != null);
     flutterDuration = Duration(seconds: sec);
     return _child;
   }
 
   T? milliSecs({required int milliSec}) {
-    assert(milliSec != null);
     flutterDuration = Duration(milliseconds: milliSec);
     return _child;
   }
 
   T? minutes({required int mins}) {
-    assert(mins != null);
     flutterDuration = Duration(minutes: mins);
     return _child;
   }
 
   T? hours({required int h}) {
-    assert(h != null);
     flutterDuration = Duration(hours: h);
     return _child;
   }

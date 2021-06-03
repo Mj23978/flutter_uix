@@ -21,11 +21,11 @@ import 'flutterx_mixins/color_mixin.dart';
 @protected
 class FxTextBuilder extends FxWidgetBuilder<AutoSizeText>
     with FxColorMixin<FxTextBuilder> {
-  FxTextBuilder(this._text) : assert(_text != null) {
+  FxTextBuilder(this._text){
     setChildToColor(this);
   }
 
-  FxTextBuilder.existing(this._text, this._textStyle) : assert(_text != null) {
+  FxTextBuilder.existing(this._text, this._textStyle){
     setChildToColor(this);
   }
 

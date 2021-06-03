@@ -191,9 +191,7 @@ class FxRichText extends FxWidgetBuilder<AutoSizeText>
 }
 
 class FxTextSpan extends FxTextSpanBuilder with FxColorMixin<FxTextSpan> {
-  FxTextSpan(this._text) : assert(_text != null) {
-    setChildToColor(this);
-  }
+  FxTextSpan(this._text);
 
   String _text;
   GestureRecognizer? _gestureRecognizer;

@@ -19,9 +19,7 @@ import 'flutterx_mixins/padding_mixin.dart';
 
 class _FxPaddingBuilder extends FxWidgetBuilder<Widget>
     with FxPaddingMixin<_FxPaddingBuilder> {
-  _FxPaddingBuilder(this._child) : assert(_child != null) {
-    setChildToPad(this);
-  }
+  _FxPaddingBuilder(this._child);
   final Widget _child;
 
   @override

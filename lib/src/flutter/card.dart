@@ -24,16 +24,12 @@ class FxCard extends FxWidgetBuilder<Widget>
     with FxColorMixin<FxCard>, FxPaddingMixin<FxCard>, FxRoundMixin<FxCard> {
   FxCard(
     this._child,
-  ) : assert(_child != null) {
-    setChildToColor(this);
-    setChildToPad(this);
-    setChildToRound(this);
-  }
+  ); 
+
   final Widget _child;
 
   // Color _shadowColor;
   double _elevation = 1.0;
-  ShapeBorder? _shape;
 
   @override
   FxCard color(Color color) => this..flutterColor = color;
@@ -42,11 +38,6 @@ class FxCard extends FxWidgetBuilder<Widget>
       this..flutterColor = Fx.hexToColor(colorHex);
 
   FxCard elevation(double val) => this.._elevation = val;
-
-  FxCard get circular => this.._shape = const CircleBorder();
-  FxCard get zeroCircular => this
-    .._shape = const CircleBorder()
-    .._elevation = 0.0;
 
   FxCard get zero => this.._elevation = 0.0;
 
@@ -59,10 +50,6 @@ class FxCard extends FxWidgetBuilder<Widget>
       color: flutterColor ?? ThemeData().cardColor,
       clipBehavior: Clip.antiAlias,
       elevation: _elevation,
-      shape: roundedValue.isNotNull
-          ? RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(roundedValue))
-          : _shape,
       // shadowColor: _shadowColor,
     );
   }

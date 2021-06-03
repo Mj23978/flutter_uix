@@ -17,13 +17,9 @@ import 'package:flutter/material.dart';
 import 'builder.dart';
 
 class _FxGestureBuilder extends FxWidgetBuilder<Widget> {
-  _FxGestureBuilder(this._child, Function this._onTap) : assert(_onTap != null);
-  _FxGestureBuilder.doubleTap(this._child, Function this._onDoubleTap)
-      : assert(_child != null),
-        assert(_onDoubleTap != null);
-  _FxGestureBuilder.longTap(this._child, Function this._onLongTap)
-      : assert(_child != null),
-        assert(_onLongTap != null);
+  _FxGestureBuilder(this._child, Function this._onTap);
+  _FxGestureBuilder.doubleTap(this._child, Function this._onDoubleTap);
+  _FxGestureBuilder.longTap(this._child, Function this._onLongTap);
 
   final Widget _child;
   Function? _onTap;

@@ -12,12 +12,12 @@
  */
 
 import 'package:flutter/material.dart';
-import 'flutter/selectable_text.dart';
-import 'responsive_ui.dart';
 import '../flutter_uix.dart';
 
 import 'flutter/rich_text.dart';
+import 'flutter/selectable_text.dart';
 import 'flutter/text.dart';
+import 'responsive_ui.dart';
 
 class VelocityXExtensions {}
 
@@ -112,9 +112,6 @@ extension NumExtension on num {
   String toDoubleStringAsFixed({int digit = 2}) =>
       toStringAsFixed(truncateToDouble() == this ? 0 : digit);
 
-  bool get isNull => this == null;
-  bool get isNotNull => this != null;
-
   /// Returns number of digits in this number
   int get numberOfDigits => toString().length;
 
@@ -175,14 +172,12 @@ extension ListWidgetExtension on List<Widget> {
   Widget stack(
           {Key? key,
           AlignmentGeometry? alignment,
-          StackFit? fit,
-          Overflow? overflow}) =>
+          StackFit? fit}) =>
       FxStack(
         this,
         key: key,
         alignment: alignment,
         fit: fit,
-        overflow: overflow,
       );
 }
 

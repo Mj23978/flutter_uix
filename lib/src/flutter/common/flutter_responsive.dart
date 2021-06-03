@@ -12,9 +12,7 @@ class FxDevice extends StatelessWidget {
   final Widget web;
 
   const FxDevice({Key? key, required this.mobile, required this.web})
-      : assert(mobile != null),
-        assert(web != null),
-        super(key: key);
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return FxConditionalSwitch.single(
